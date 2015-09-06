@@ -7,7 +7,7 @@
   	<div>${author.name} -- ${author.gender?string("男", "女")} -- ${author.birthday?datetime}</div>
   	<div>
   		<#list author.books as book>
-			${book.title} -- ${book.price?string["0.00"]} -- ${author.birthday?date}<br/>
+			${book.title} -- ${book.price?string["0.00"]} -- ${book.publishDate?date}<br/>
 		</#list>
 	</div>
 </body>
