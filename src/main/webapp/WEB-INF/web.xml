@@ -45,12 +45,12 @@
   
   <!-- 测试springMVC时，可以将这个注释掉 -->
   <servlet>
-    <servlet-name>demo</servlet-name>
-    <servlet-class>demo.ServletDemo</servlet-class>
+    <servlet-name>servletDemo</servlet-name>
+    <servlet-class>com.freemarkerdemo.demo.ServletDemo</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>demo</servlet-name>
-    <url-pattern>/demo</url-pattern>
+    <servlet-name>servletDemo</servlet-name>
+    <url-pattern>/servletDemo.do</url-pattern>
   </servlet-mapping>
   
 </web-app>
