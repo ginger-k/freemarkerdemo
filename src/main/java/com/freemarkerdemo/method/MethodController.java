@@ -1,18 +1,18 @@
 package com.freemarkerdemo.method;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class ControllerTest {
+public class MethodController {
 
 	@RequestMapping(value="/methodTest",method=RequestMethod.GET)
-	public String methodTest(HttpServletRequest request) {
-		request.setAttribute("indexOf", new IndexOfMethod());
-		return "demo";
+	public ModelAndView methodTest() {
+		ModelAndView mv = new ModelAndView("method");
+		mv.addObject("indexOf", new IndexOfMethod());
+		return mv;
 	}
 	
 	

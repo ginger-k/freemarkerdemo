@@ -10,7 +10,7 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateExceptionHandler;
 
-public class ConsoleTest {
+public class MethodConsole {
 
 	public static void main(String[] args) throws Exception{
 		//创建Freemarker配置实例
@@ -28,8 +28,6 @@ public class ConsoleTest {
 		
 		//显示生成的数据,将合并后的数据打印到控制台
 		Writer out = new OutputStreamWriter(System.out);
-		//可以用于生成java文件
-//		Writer out = new OutputStreamWriter(new FileOutputStream(new File("templates/demo.java"))); 
 		t1.process(root, out);
 		out.flush();
 

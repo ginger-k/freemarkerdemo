@@ -7,7 +7,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import freemarker.template.*;
 
-public class ServletDemo extends HttpServlet {
+public class DemoServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -1930999342485132612L;
 
@@ -37,8 +37,7 @@ public class ServletDemo extends HttpServlet {
         try {
             t.process(root, out);
         } catch (TemplateException e) {
-            throw new ServletException(
-                    "Error while processing FreeMarker template", e);
+            throw new ServletException("Error while processing FreeMarker template", e);
         }
     }
 }

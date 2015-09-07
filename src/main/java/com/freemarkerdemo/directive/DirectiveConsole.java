@@ -1,4 +1,4 @@
-package com.freemarkerdemo.demo;
+package com.freemarkerdemo.directive;
 
 import java.io.File;
 import java.io.OutputStreamWriter;
@@ -10,8 +10,8 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateExceptionHandler;
 
-public class ConsoleDemo {
-	
+public class DirectiveConsole {
+
 	public static void main(String[] args) throws Exception{
 		//创建Freemarker配置实例
 		Configuration cfg = new Configuration(Configuration.VERSION_2_3_23);
@@ -20,20 +20,16 @@ public class ConsoleDemo {
         cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
 		
 		//创建数据模型
-		Map<String, String> root = new HashMap<String, String>();
-		root.put("user", "老高");
+		Map<String, Object> root = new HashMap<String, Object>();
+		root.put("upper", new UpperDirective());
 		
 		//加载模板文件
-		Template t1 = cfg.getTemplate("demo.ftl");
+		Template t1 = cfg.getTemplate("directive.ftl");
 		
 		//显示生成的数据,将合并后的数据打印到控制台
 		Writer out = new OutputStreamWriter(System.out);
-		//可以用于生成java文件
-//		Writer out = new OutputStreamWriter(new FileOutputStream(new File("templates/demo.java"))); 
 		t1.process(root, out);
 		out.flush();
-
-		
 	}
-
+	
 }

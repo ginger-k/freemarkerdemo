@@ -9,7 +9,7 @@
 
   	<div>${author["name"]} -- <#if author.gender>男<#else>女</#if> -- ${author.birthday?date}</div>
   	<div>${author.name} -- ${author.gender?string("男", "女")} -- ${author.birthday?datetime}</div>
-  	<#-- <div>${author.name} -- ${author.gender?then("男", "女")} -- ${author.birthday?datetime}</div> -->
+  	<div>${author.name} -- ${author.gender?then("男", "女")} -- ${author.birthday?datetime}</div>
   	
   	${author.name?starts_with("张")?string("是", "否")}
   	
@@ -22,7 +22,7 @@
 	</div>
 	
 	<div>
-		<#-- books: <#list author.books as book>${book.title}<#sep>, <#else>None</#list><br/> -->
+		 books: <#list author.books as book>${book.title}<#sep>, <#else>None</#list><br/> 
 	</div>
 </body>
 </html>
