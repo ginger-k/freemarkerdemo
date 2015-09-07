@@ -15,7 +15,7 @@ public class ServletDemo extends HttpServlet {
     
     public void init() {
     	//创建Freemarker配置实例
-        Configuration cfg = new Configuration();
+        Configuration cfg = new Configuration(Configuration.VERSION_2_3_23);
         cfg.setServletContextForTemplateLoading(getServletContext(), "WEB-INF/templates");
 
         cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);

@@ -1,4 +1,4 @@
-package com.freemarkerdemo.demo;
+package com.freemarkerdemo.method;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class ControllerDemo {
+public class ControllerTest {
 
-	@RequestMapping(value="/springMvcDemo",method=RequestMethod.GET)
-	public String springMvcDemo(HttpServletRequest request) {
-		request.setAttribute("message", "Hello, SpringMVC!");
+	@RequestMapping(value="/methodTest",method=RequestMethod.GET)
+	public String methodTest(HttpServletRequest request) {
+		request.setAttribute("indexOf", new IndexOfMethod());
 		return "demo";
 	}
+	
 	
 }
