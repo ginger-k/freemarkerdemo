@@ -30,6 +30,9 @@ public class TypesTestController {
 		return "types";
 	}
 	
+	/*
+	 * 数据模型是hash，跟"root"这个名字没有关系
+	 */
 	@RequestMapping(value="/root",method=RequestMethod.GET)
 	public String root(HttpServletRequest request) throws ParseException {
 		Map<String, Object> root = new HashMap<String, Object>();
